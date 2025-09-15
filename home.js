@@ -1,5 +1,5 @@
-const time  = document.getElementById('time');
-const date  = document.getElementById('date');
+const time = document.getElementById('time');
+const date = document.getElementById('date');
 const greet = document.getElementById('greet');
 
 const quotes = [
@@ -14,13 +14,14 @@ const quotes = [
 ];
 function pickQuote() {
   const idx = Math.floor(Math.random() * quotes.length);
-  return quotes[idx];}
+  return quotes[idx];
+}
 
 
 
-function tick(){
-    const now=new Date();
-     time.textContent = now.toLocaleTimeString('zh-CN');
+function tick() {
+  const now = new Date();
+  time.textContent = now.toLocaleTimeString('zh-CN');
 
   date.textContent = now.toLocaleDateString('zh-CN', {
     year: 'numeric',
@@ -34,11 +35,11 @@ function tick(){
   }
 }
 tick();
-setInterval(tick,1000);
+setInterval(tick, 1000);
 
 const $ = id => document.getElementById(id);
-const slogans = ['南大家园','云家园','家园工作室','小家园传声机'];
-const randBtn = $('randBtn'); 
+const slogans = ['南大家园', '云家园', '家园工作室', '小家园传声机'];
+const randBtn = $('randBtn');
 randBtn.onclick = () => {
   const randomText = slogans[Math.floor(Math.random() * slogans.length)];
   $('search').value = randomText;
@@ -46,15 +47,15 @@ randBtn.onclick = () => {
 
 const engineMap = {
   google: 'https://www.google.com/search?q=',
-  bing:  'https://cn.bing.com/search?q=',
+  bing: 'https://cn.bing.com/search?q=',
 };
 
-const input  = document.getElementById('search'); 
-const btn    = document.getElementById('searchBtn');
+const input = document.getElementById('search');
+const btn = document.getElementById('searchBtn');
 const select = document.getElementById('engine');
 
 function doSearch() {
-  const raw =input.value;
+  const raw = input.value;
   const key = raw.trim();
 
   if (!key || raw === '有问题就快搜索吧...') {
@@ -69,14 +70,6 @@ function doSearch() {
 
 }
 
-
-const search = document.getElementById('search');
-document.getElementById('searchBtn').addEventListener('click', function () {
-  const keyword = search.value.trim();
-if (keyword) {
-    localStorage.setItem('lastSearch', keyword)
-  }
-});
 
 btn.addEventListener('click', doSearch);
 input.addEventListener('keydown', e => {
