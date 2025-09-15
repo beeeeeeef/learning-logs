@@ -29,9 +29,8 @@ body{
   color: #291515;
   font-size: 20px;
     background: rgba(207, 166, 166, 0.15);  
-  backdrop-filter: blur(8px);              
-  -webkit-backdrop-filter: blur(8px);      
-  border-bottom: 1px solid rgba(198, 145, 145, 0.2);
+  backdrop-filter: blur(8px);                  
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 
@@ -40,7 +39,15 @@ body{
     margin-top: -40vh;
     margin-left: 300px;
 }
-.card input{flex:1;border:none;outline:none;font-size:16px;}
+.card input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-family: inherit;
+  margin-left: -10px;
+}
+
 .card button{background:none;border:none;font-size:20px;cursor:pointer;}
 .card button:hover{opacity:.7;}
 .ht{
@@ -69,15 +76,6 @@ body{
   font-size: 16px;
   font-family: inherit;
 }
-.card input {
-  flex: 1;
-  border: none;
-  outline: none;
-  font-size: 18px;
-  font-family: inherit;
-  margin-left: -10px;
-}
-
 .card select {
     margin-left: -3px;
 border: #000000;
@@ -106,12 +104,7 @@ margin: 50px;
     color: rgb(144, 222, 185);
     margin: 0 0 30px;
 }
-select.input{
-    font-size: 1.2rem;
-    padding:8px 10px;
-    border-radius: 5px;
-    border: 1px solid black;
-}
+
 input{
     width: 260px;
     margin-left: 10px;

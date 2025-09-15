@@ -56,7 +56,7 @@ const select = document.getElementById('engine');
 function doSearch() {
   const raw =input.value;
   const key = raw.trim();
-  
+
   if (!key || raw === '有问题就快搜索吧...') {
     input.value = '请输入内容';
     input.select();
@@ -65,27 +65,24 @@ function doSearch() {
   const base = engineMap[select.value];
 
   window.open(base + encodeURIComponent(key), '_blank');
-}
-btn.addEventListener('click', doSearch);
-input.addEventListener('keydown', e => {
-  if (e.key === 'Enter') doSearch();
-});
+  localStorage.setItem('lastSearch', key)
 
+}
+
+
+const search = document.getElementById('search');
 document.getElementById('searchBtn').addEventListener('click', function () {
-  const keyword = document.getElementById('search').value.trim();
+  const keyword = search.value.trim();
 if (keyword) {
     localStorage.setItem('lastSearch', keyword)
   }
 });
 
-const search = document.getElementById('search');
-
-search.addEventListener('keydown', function (event) {
-  if (event.key === 'Enter') {
-    const keyword = search.value.trim(); 
-    localStorage.setItem('lastSearch', keyword); 
-  }
+btn.addEventListener('click', doSearch);
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter') doSearch();
 });
+
 
 document.getElementById('prevBtn').addEventListener('click', function () {
   const last = localStorage.getItem('lastSearch');
